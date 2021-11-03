@@ -1,0 +1,62 @@
+\begin{thebibliography}{10}
+
+\bibitem{Agarwal2021AffordancebasedRL}
+Tanmay Agarwal, Hitesh Arora, and Jeff~G. Schneider.
+\newblock Affordance-based reinforcement learning for urban driving.
+\newblock {\em ArXiv}, abs/2101.05970, 2021.
+
+\bibitem{Bansal2019ChauffeurNetLT}
+Mayank Bansal, Alex Krizhevsky, and Abhijit~S. Ogale.
+\newblock Chauffeurnet: Learning to drive by imitating the best and
+  synthesizing the worst.
+\newblock {\em ArXiv}, abs/1812.03079, 2019.
+
+\bibitem{Chen2021LearningTD}
+Di~Chen, Vladlen Koltun, and Philipp Kr{\"a}henb{\"u}hl.
+\newblock Learning to drive from a world on rails.
+\newblock {\em ArXiv}, abs/2105.00636, 2021.
+
+\bibitem{chen2019lbc}
+Dian Chen, Brady Zhou, Vladlen Koltun, and Philipp Kr\"ahenb\"uhl.
+\newblock Learning by cheating.
+\newblock In {\em Conference on Robot Learning (CoRL)}, 2019.
+
+\bibitem{Dosovitskiy2017CARLAAO}
+Alexey Dosovitskiy, Germ{\'a}n Ros, Felipe Codevilla, Antonio~M. L{\'o}pez, and
+  Vladlen Koltun.
+\newblock Carla: An open urban driving simulator.
+\newblock {\em ArXiv}, abs/1711.03938, 2017.
+
+\bibitem{OhnBar2020LearningSD}
+Eshed Ohn-Bar, Aditya Prakash, Aseem Behl, Kashyap Chitta, and Andreas Geiger.
+\newblock Learning situational driving.
+\newblock {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 11293--11302, 2020.
+
+\bibitem{Prakash2020ExploringDA}
+Aditya Prakash, Aseem Behl, Eshed Ohn-Bar, Kashyap Chitta, and Andreas Geiger.
+\newblock Exploring data aggregation in policy learning for vision-based urban
+  autonomous driving.
+\newblock {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 11760--11770, 2020.
+
+\bibitem{Rhinehart2020DeepIM}
+Nicholas Rhinehart, Rowan McAllister, and Sergey Levine.
+\newblock Deep imitative models for flexible inference, planning, and control.
+\newblock {\em ArXiv}, abs/1810.06544, 2020.
+
+\bibitem{Toromanoff2020EndtoEndMR}
+Marin Toromanoff, {\'E}milie Wirbel, and Fabien Moutarde.
+\newblock End-to-end model-free reinforcement learning for urban driving using
+  implicit affordances.
+\newblock {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 7151--7160, 2020.
+
+\bibitem{Zeng2019EndToEndIN}
+Wenyuan Zeng, Wenjie Luo, Simon Suo, Abbas Sadat, Binh Yang, Sergio Casas, and
+  Raquel Urtasun.
+\newblock End-to-end interpretable neural motion planner.
+\newblock {\em 2019 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 8652--8661, 2019.
+
+\end{thebibliography}

@@ -3,11 +3,15 @@
     
 % Packages
 \usepackage{float}
+\usepackage{natbib}
+\bibliographystyle{plain}
 \usepackage{hyperref}
 \usepackage{graphicx, import}   % Pictures
 \usepackage{lipsum}             % Blindtext
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{fancyhdr}
+
+\def\code#1{\texttt{#1}}
 
 \begin{document}
 %---------------------------------------------------------------------------------------
@@ -62,12 +66,12 @@
 % Chapters
 %\input{sections/abstract}
 \section*{Abstract}
-In the 3-month internship, I had the chance to take a detailed look how deep learning algorithms can be applied to autonomous driving, especially in the part of motion planning. I started with literature review, and later on reimplemented a repository from a previous research, Learning by Cheating*.
-
+In the 3-month internship, I had the chance to take a detailed look how deep learning algorithms can be applied to autonomous driving, especially in the part of motion planning. I started with literature review, and later on reimplemented a repository from a previous research, \cite{chen2019lbc} Learning by Cheating. \\
+\noindent \\I have put my code on GitHub. \url{https://github.com/b07901064/public_1}
 
 % Section 1 ========================
 \section{Motivation and Goal of the Project}
-I am interested in the field of machine learning. I’ve already taken courses in the university. However, I didn’t have many chances to put the theory into practice. Therefore, I would like to do an internship that would somehow relate to machine learning. Luckily, I got the chance to work on the Carla autonomous driving project in fortiss.
+I am interested in the field of machine learning. I’ve already taken courses in the university. However, I didn’t have many chances to put the theory into practice. Therefore, I would like to do an internship that would somehow relate to machine learning. Luckily, I got the chance to work on the \cite{Dosovitskiy2017CARLAAO} Carla autonomous driving project in fortiss.
 \\
 
 \noindent Machine learning algorithms has many applications, and autonomous driving is one of them. It is also a widely discussed topic in the recent years. I am really found of the topic, and I was excited that I might have the opportunity to learn how deep learning algorithms can be applied to autonomous driving. Originally, my goal was to first read about some of the state-of-the-art approaches, and then implement an algorithm for motion planning.
@@ -81,13 +85,13 @@ I am studying electrical and computer engineering in the 5th bachelor semester. 
 \noindent In addition, I didn’t know much about deep learning. It was only briefly introduced in the university lecture. Neither did I have the experiences with PyTorch nor Tensorflow.
 \\
 
-\noindent Hence, I started with literature review on state-of-the-art deep learning-based approaches. Most of the paper I read used either imitation learning or reinforcement learning. I was not familiar with neither the two machine learning areas, but I’ve learnt a lot during the process. After reading, I felt that I’d personally prefer the imitation learning approach better. There was one paper I liked particularly, which is “Learning by Cheating (LBC)” by Chen et al. Therefore, I decided to implement an algorithm based on their approach.
+\noindent Hence, I started with literature review on state-of-the-art deep learning-based approaches (see References). Most of the paper I read used either imitation learning or reinforcement learning. I was not familiar with neither the two machine learning areas, but I’ve learnt a lot during the process. After reading, I felt that I’d personally prefer the imitation learning approach better. There was one paper I liked particularly, which is \cite{chen2019lbc} Learning by Cheating. Therefore, I decided to implement an algorithm based on their approach.
 \\
 
 \noindent After two weeks of literature review, I spent another week at home looking into the syntax of the framework, PyTorch, before I started to set up the working environment in the office. My college introduced the cloud computing concept to me, i.e. how I can connect to their server and work in my docker container. I also learnt to use conda environment to manage dependencies and isolate projects. At the same time, since I was working on an Ubuntu machine, I got more familiar with the terminal as well.
 \\
 
-\noindent I tried out two repositories during the internship. The first repository requires user to collect data with the Carla server. Since installing a Carla simulator on the company server is not an easy task, the plan was originally first collect data on the local machine with the installed Carla server, and then upload the collected data to the company server and train the model there. I’ve install multiple versions of Carla simulator. For each simulator, I had to set up a virtual environment, and specified the correct \$PYTHONPATH and sometimes custom .egg files. The authors loaded the data in a complicated format which we couldn’t really use. Therefore, with the help of my supervisor, I wrote a data loader file to load data in binary format with the module pickle. It is an easy and efficient way to load data. I was able to load the data and see channels of images. However, when I went back after the weekend, it seemed that I could not establish connection between the client and Carla server, even though I didn’t change anything. At the end, we gave up on that repository because we had seen too many problems with it. For instance, the provided environment was really out dated, that was why we had to try different versions of Carla simulator and spend quite some time just to set up the environment.
+\noindent I tried out two repositories during the internship. The first repository requires user to collect data with the Carla server. Since installing a Carla simulator on the company server is not an easy task, the plan was originally first collect data on the local machine with the installed Carla server, and then upload the collected data to the company server and train the model there. I’ve install multiple versions of Carla simulator. For each simulator, I had to set up a virtual environment, and specified the correct \code{\$PYTHONPATH} and sometimes custom .egg files. The authors loaded the data in a complicated format which we couldn’t really use. Therefore, with the help of my supervisor, I wrote a data loader file to load data in binary format with the module pickle. It is an easy and efficient way to load data. I was able to load the data and see channels of images. However, when I went back after the weekend, it seemed that I could not establish connection between the client and Carla server, even though I didn’t change anything. At the end, we gave up on that repository because we had seen too many problems with it. For instance, the provided environment was really out dated, that was why we had to try different versions of Carla simulator and spend quite some time just to set up the environment.
 \\
 
 \noindent The second repository is from the same author. It’s from his another paper about their reinforcement learning approach to the Carla autonomous driving challenge, but he also included their LBC code in the repository. The environment provided in the second repository is more up-to-date and it doesn’t contain many other unnecessary packages. They also provide a dataset online, so that I didn’t really have to collect data with the Carla server myself. I downloaded the dataset and basically start my real work from there.
@@ -217,7 +221,7 @@ I have learnt a lot during this internship. Although I couldn’t make it to my 
 \noindent Huge thanks to my supervisor, Mr Matthes. No matter how many trivial questiones I asked, he was always there and replied patiently.
 
 
-\bibliography{other/bibliography}
+\bibliography{other/citation}
 \nocite{*}
 
 \end{document}
