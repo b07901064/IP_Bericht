@@ -101,7 +101,6 @@ My task then was to implement a baseline. At first I had no idea where to start,
 \\
 
 \noindent The provided dataset is in another format than the one the author used. The authors had the data in lmdb format, whereas the one I downloaded contains many subfolders, and each subfolder includes one folder with the images and a .json file which contains the numerical values and images file path. The whole dataset is hundreds GB large. I had to write a data loader to load the data efficiently, in terms of both memory and speed.
-[bild- data folder]
 \\
 
 \noindent I first had to define what information one item contains. One item could be the whole scenario, i.e. the whole subfolder, or it could also just be the information from one timeframe. We looked into their code, and we guessed they used just the information from one timeframe plus some future ego-vehicle’s locations for each item.
