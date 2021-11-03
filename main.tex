@@ -194,7 +194,12 @@ The camera-view model (RGB model). Takes extra two inputs, i.e. the RGB images f
 \section {Results Evaluation and Comparison with Goals}
 The author also provided their output for our reference. I think I got almost everything right. The model I trained outputs a reasonable trajectory, and it also learnt to how to understand perceive the frontal camera images. Maybe it is a small pity that it has not learnt how to recognize the road lane, compared with the results the authors provided.
 %[]
-\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth] {bilder/lbc.jpg} 
+  \caption{reference output from the authors}
+  %\label{fig:somesignal}
+\end{figure}
 
 \noindent I did not really follow my initial plan in this internship, which was to implement a new model for motion planning. At the beginning, we were talking about only using the birds-eye-view map (not the frontal camera images) as the input, and implement a new idea. That was why I chose to use the privileged model from the LBC paper as the baseline. However, I was not really familiar with Python programming and deep learning practices. I had a lot to learn by just implementing a simple baseline. Even though I spent a lot of time discussing the theoretical part of the new idea with my supervisor, I still don’t know where to start if I’d like to implement it in a program. Hence, I chose to implement the sensorimotor and see how it performs.
 \\
@@ -202,7 +207,7 @@ The author also provided their output for our reference. I think I got almost ev
 \noindent Now I have successfully trained both the privileged agent and the sensorimotor agent. The next step could be letting the agent run on the Carla simulator and see how it performs. However, at the moment I am more interested in how to optimize the training speed. I have observed a fluctuation in the time that my training episodes need. The first episode could take almost 12 hours, and I was using only one fourth of the whole given dataset. On the contrary, the later episodes sometimes only need 4 hours. Even if we exclude the first episode, since it is typical that the first one needs longer, I still see this fluctuation in the training time. Some episodes needed 4 to 5 hours, whereas the other ones needed 9-10 hours.
 %[]
 
-% Section 4 ========================
+% Section 5 ========================
 \section {Summary}
 I have learnt a lot during this internship. Although I couldn’t make it to my supervisor’s expectation, I have already exceeded my own expectation. In the beginning, I didn’t think I could get anything working. But in the end, I got two models working.
 \\
