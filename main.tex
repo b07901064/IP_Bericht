@@ -47,7 +47,7 @@
 	student ID number & 03728797                   \\
 	  & \underline{peiyi.lin@tum.de} \\
 	\\
-	\textbf {Supervisor}  & Stefan Matthes                             \\
+	\textbf {Supervisor}  & Stefan Matthes          \\
 	 & fortiss GmbH                           \\
 	& Guerickestraße 25,                          \\
 	& 80805 München                          
@@ -94,7 +94,7 @@ I am studying electrical and computer engineering in the 5th bachelor semester. 
 \noindent I tried out two repositories during the internship. The first repository requires user to collect data with the Carla server. Since installing a Carla simulator on the company server is not an easy task, the plan was originally first collect data on the local machine with the installed Carla server, and then upload the collected data to the company server and train the model there. I’ve install multiple versions of Carla simulator. For each simulator, I had to set up a virtual environment, and specified the correct \code{\$PYTHONPATH} and sometimes custom .egg files. The authors loaded the data in a complicated format which we couldn’t really use. Therefore, with the help of my supervisor, I wrote a data loader file to load data in binary format with the module pickle. It is an easy and efficient way to load data. I was able to load the data and see channels of images. However, when I went back after the weekend, it seemed that I could not establish connection between the client and Carla server, even though I didn’t change anything. At the end, we gave up on that repository because we had seen too many problems with it. For instance, the provided environment was really out dated, that was why we had to try different versions of Carla simulator and spend quite some time just to set up the environment.
 \\
 
-\noindent The second repository is from the same author. It’s from his another paper about their reinforcement learning approach to the Carla autonomous driving challenge, but he also included their LBC code in the repository. The environment provided in the second repository is more up-to-date and it doesn’t contain many other unnecessary packages. They also provide a dataset online, so that I didn’t really have to collect data with the Carla server myself. I downloaded the dataset and basically start my real work from there.
+\noindent The second repository is from the same author. It’s from his another paper \cite{Chen2021LearningTD} about their reinforcement learning approach to the Carla autonomous driving challenge, but he also included their LBC code in the repository. The environment provided in the second repository is more up-to-date and it doesn’t contain many other unnecessary packages. They also provide a dataset online, so that I didn’t really have to collect data with the Carla server myself. I downloaded the dataset and basically start my real work from there.
 
 % Section 3 ========================
 \section{Solution Concept and Realization of the Project}
@@ -143,7 +143,7 @@ The birds-eye-view model (BEV model), is the privileged model. It has the BEV ma
 The camera-view model (RGB model). Takes extra two inputs, i.e. the RGB images from the frontal camera plus the segmented images. This model uses the output trajectory from the BEV model as the ground truth (tgt\_bev\_locs). 
 \\
 
-\noindent The rgb\_model network than takes only the RGB images and speeds (rgbs, spds) as input, and outputs the predicted locations on the RGB images (pred\_rgb\_locs), and also the predicted segmentations (pred\_sems). The predicted locations on the RGB images is then mapped to the birds-eye-view image (pred\_bev\_locs). We can calculate the loss between the predicted location and the ground truth; this loss is called act\_loss. In this case, the L1-loss is used. And act\_loss has 6 columns, where each column corresponds to a command. The location loss (loc\_loss) is calculated from the act\_loss, dependent on if the command is to follow a lane or to turn. Meanwhile, the model also tries to learn the segmentation. Namely, how to perceive and understand the RGB images from the frontal cameras.
+\noindent The RGB model network than takes only the RGB images and speeds (rgbs, spds) as input, and outputs the predicted locations on the RGB images (pred\_rgb\_locs), and also the predicted segmentations (pred\_sems). The predicted locations on the RGB images is then mapped to the birds-eye-view image (pred\_bev\_locs). We can calculate the loss between the predicted location and the ground truth; this loss is called act\_loss. In this case, the L1-loss is used. And act\_loss has 6 columns, where each column corresponds to a command. The location loss (loc\_loss) is calculated from the act\_loss, dependent on if the command is to follow a lane or to turn. Meanwhile, the model also tries to learn the segmentation. Namely, how to perceive and understand the RGB images from the frontal cameras.
 
 \noindent \\The segmentation did not work at first. The model should label the RGB images. However, I did not provide the right ground truth segmentation for it to learn. Since it is all about labelling the images, the ground truth segmentation should be just labels, and has the size of (height, width, num\_labels). I didn’t know about that at first. From what I saw in the dataset, the segmented images are only .png files. I was not aware that my dataset is different from the one the authors used. If I read it as normal images, it would then have the wrong dimension in the 3rd order, so I just read it as gray-scale images. This way the ground truth values are just zeros. As a result, when I visualize the training process, the ground truth segmentation was all black, and the model learnt the segmentation to be all black, too. Nonetheless, even without the segmentation, the RGB model can still learn pretty well.
 \\
@@ -152,7 +152,7 @@ The camera-view model (RGB model). Takes extra two inputs, i.e. the RGB images f
 %[figure]
 \\
 
-\noindent After I passed the BEV model, the trajectoroes started to make some sense. I could see the reasonable ground truth trajectory from the very beginning. The predicted trajectory, on the other hand, took a while to make sense. It first learnt how fast it should drive, and stopped when it needed to stop. For instance, it should stop at red light. However, I could not see the model turning before I went to bed. To my surprise, when I woke up the next morning and check again, I was thrilled to see the model slowly learning how to turn left and right. 
+\noindent After I passed the BEV model, the trajectories started to make some sense. I could see the reasonable ground truth trajectory from the very beginning. The predicted trajectory, on the other hand, took a while to make sense. It first learnt how fast it should drive, and stopped when it needed to stop. For instance, it should stop at red light. However, I could not see the model turning before I went to bed. To my surprise, when I woke up the next morning and check again, I was thrilled to see the model slowly learning how to turn left and right. 
 %[figure]
 \\
 
@@ -218,7 +218,7 @@ I have learnt a lot during this internship. Although I couldn’t make it to my 
 \noindent During this journey, I learnt a lot of the essential skills an engineer needs, which could not be taught in an university. I started to read papers just a few months ago because of this internship. I learnt how to work in a docker container on server. I got more familiar with terminal commands. I started to use git because of this internship. I learnt how to use the debugger and how to manage virtual environments. I can program in python better and understand the code from other people faster now, compared with myself just two months ago. I gained real practices with deep learning and the framework PyTorch. I had a look into the research field, which was something I was curious about.
 \\
 
-\noindent Huge thanks to my supervisor, Mr Matthes. No matter how many trivial questiones I asked, he was always there and replied patiently.
+\noindent Last but not least, I would like to express my sincere thanks to my supervisor, Mr Matthes. No matter how many trivial questions I asked, he was always there and replied patiently. Additionally, I would like thank Mr Qiu and everyone else in the office who helped me out multiple times. I truly appreciate the support. 
 
 
 \bibliography{other/citation}
